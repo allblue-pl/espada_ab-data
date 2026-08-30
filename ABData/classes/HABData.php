@@ -101,7 +101,7 @@ class HABData {
     static public function GetTableId(string $tableName) {
         if (self::$TableIds === null) {
             self::$TableIds = json_decode(file_get_contents(PATH_PRESETS . 
-                    '/Sys/tableIds.json'), true);
+                    '/ABData/tableIds.json'), true);
         }
 
         if (!array_key_exists($tableName, self::$TableIds))
@@ -113,7 +113,7 @@ class HABData {
     static public function GetTableName(int $tableId) {
         if (self::$TableIds === null) {
             self::$TableIds = json_decode(file_get_contents(PATH_PRESETS . 
-                    '/Sys/tableIds.json'), true);
+                    '/ABData/tableIds.json'), true);
         }
 
         $tableName = array_search($tableId, self::$TableIds);
