@@ -10,7 +10,7 @@ use Override;
 
 /**
  *
- * @phpstan-type _T_RABData_Devices array{
+ * @phpstan-type _T_TRABData_Devices array{
  *     Id: int,
  *     ItemIds_Last: int,
  *     SystemItemIds_Last: int,
@@ -23,8 +23,8 @@ use Override;
 class _TDevices extends TTable {
     /**
      *
-     * @param _T_RABData_Devices $row
-     * @return _T_RABData_Devices
+     * @param _T_TRABData_Devices $row
+     * @return _T_TRABData_Devices
      */
     static public function AssertRow(array $row): array {
         return $row;
@@ -32,8 +32,8 @@ class _TDevices extends TTable {
 
     /**
      *
-     * @param list<_T_RABData_Devices> $rows
-     * @return list<_T_RABData_Devices>
+     * @param list<_T_TRABData_Devices> $rows
+     * @return list<_T_TRABData_Devices>
      */
     static public function AssertRows(array $rows): array {
         return $rows;
@@ -42,7 +42,7 @@ class _TDevices extends TTable {
     // /**
     //  *
     //  * @param array|null $row
-    //  * @return _T_RABData_Devices|null
+    //  * @return _T_TRABData_Devices|null
     //  */
     // static public function CastRow(array|null $row): array|null {
     //     /* phpstan-ignore return.type */
@@ -52,7 +52,7 @@ class _TDevices extends TTable {
     // /**
     //  *
     //  * @param array $rows
-    //  * @return list<_T_RABData_Devices>
+    //  * @return list<_T_TRABData_Devices>
     //  */
     // static public function CastRows(array $rows): array {
     //     return $rows;
@@ -78,7 +78,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return _T_RABData_Devices|null
+     * @return _T_TRABData_Devices|null
      */
      #[Override]
     public function row_ByColumn(string $colName, mixed $colValue, 
@@ -88,7 +88,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return _T_RABData_Devices|null
+     * @return _T_TRABData_Devices|null
      */
     #[Override]
     public function row_ByPKs(array $keys, string $groupExtension = '', 
@@ -98,7 +98,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return _T_RABData_Devices|null
+     * @return _T_TRABData_Devices|null
      */
     #[Override]
     public function row_Where(array $conditions = [], string $groupExtension = '',
@@ -108,8 +108,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return list<_T_RABData_Devices>|null
-     * @phpstan-ignore return.phpDocType
+     * @return list<_T_TRABData_Devices>
      */
     #[Override]
     public function select_ByPKs(array $pks, string $groupExtension = ''): array {
@@ -117,8 +116,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return list<_T_RABData_Devices>|null
-     * @phpstan-ignore return.phpDocType
+     * @return list<_T_TRABData_Devices>
      */
     #[Override]
     public function select_Where(array $conditions = [], string $groupExtension = '',
@@ -127,7 +125,7 @@ class _TDevices extends TTable {
     }
 
     /** 
-     * @return _T_RABData_Devices
+     * @return _T_TRABData_Devices
      */
     #[Override]
     public function stripRow_TableColumnsOnly(array $row): array {

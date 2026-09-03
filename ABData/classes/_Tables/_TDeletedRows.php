@@ -10,7 +10,7 @@ use Override;
 
 /**
  *
- * @phpstan-type _T_RABData_DeletedRows array{
+ * @phpstan-type _T_TRABData_DeletedRows array{
  *     TableId: int,
  *     RowId: float,
  *     _Modified_DateTime: float,
@@ -19,8 +19,8 @@ use Override;
 class _TDeletedRows extends TTable {
     /**
      *
-     * @param _T_RABData_DeletedRows $row
-     * @return _T_RABData_DeletedRows
+     * @param _T_TRABData_DeletedRows $row
+     * @return _T_TRABData_DeletedRows
      */
     static public function AssertRow(array $row): array {
         return $row;
@@ -28,8 +28,8 @@ class _TDeletedRows extends TTable {
 
     /**
      *
-     * @param list<_T_RABData_DeletedRows> $rows
-     * @return list<_T_RABData_DeletedRows>
+     * @param list<_T_TRABData_DeletedRows> $rows
+     * @return list<_T_TRABData_DeletedRows>
      */
     static public function AssertRows(array $rows): array {
         return $rows;
@@ -38,7 +38,7 @@ class _TDeletedRows extends TTable {
     // /**
     //  *
     //  * @param array|null $row
-    //  * @return _T_RABData_DeletedRows|null
+    //  * @return _T_TRABData_DeletedRows|null
     //  */
     // static public function CastRow(array|null $row): array|null {
     //     /* phpstan-ignore return.type */
@@ -48,7 +48,7 @@ class _TDeletedRows extends TTable {
     // /**
     //  *
     //  * @param array $rows
-    //  * @return list<_T_RABData_DeletedRows>
+    //  * @return list<_T_TRABData_DeletedRows>
     //  */
     // static public function CastRows(array $rows): array {
     //     return $rows;
@@ -70,7 +70,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return _T_RABData_DeletedRows|null
+     * @return _T_TRABData_DeletedRows|null
      */
      #[Override]
     public function row_ByColumn(string $colName, mixed $colValue, 
@@ -80,7 +80,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return _T_RABData_DeletedRows|null
+     * @return _T_TRABData_DeletedRows|null
      */
     #[Override]
     public function row_ByPKs(array $keys, string $groupExtension = '', 
@@ -90,7 +90,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return _T_RABData_DeletedRows|null
+     * @return _T_TRABData_DeletedRows|null
      */
     #[Override]
     public function row_Where(array $conditions = [], string $groupExtension = '',
@@ -100,8 +100,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return list<_T_RABData_DeletedRows>|null
-     * @phpstan-ignore return.phpDocType
+     * @return list<_T_TRABData_DeletedRows>
      */
     #[Override]
     public function select_ByPKs(array $pks, string $groupExtension = ''): array {
@@ -109,8 +108,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return list<_T_RABData_DeletedRows>|null
-     * @phpstan-ignore return.phpDocType
+     * @return list<_T_TRABData_DeletedRows>
      */
     #[Override]
     public function select_Where(array $conditions = [], string $groupExtension = '',
@@ -119,7 +117,7 @@ class _TDeletedRows extends TTable {
     }
 
     /** 
-     * @return _T_RABData_DeletedRows
+     * @return _T_TRABData_DeletedRows
      */
     #[Override]
     public function stripRow_TableColumnsOnly(array $row): array {
