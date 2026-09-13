@@ -15,10 +15,37 @@ use Override;
  *     ItemIds_Last: int,
  *     SystemItemIds_Last: int,
  *     Hash: string,
- *     Expires: float|null,
- *     LastSync: float|null,
- *     DBSync: float|null,
+ *     Expires: int|null,
+ *     LastSync: int|null,
+ *     DBSync: int|null,
  * }
+ * @phpstan-type _T_TRABData_Devices_Insert array{
+ *     Id: int,
+ *     ItemIds_Last: int,
+ *     SystemItemIds_Last: int,
+ *     Hash: string,
+ *     Expires: int|null,
+ *     LastSync: int|null,
+ *     DBSync: int|null,
+ * }
+ * @phpstan-type _T_TRABData_Devices_Update array{
+ *     Id?: int,
+ *     ItemIds_Last?: int,
+ *     SystemItemIds_Last?: int,
+ *     Hash?: string,
+ *     Expires?: int|null,
+ *     LastSync?: int|null,
+ *     DBSync?: int|null,
+ * }
+ * @phpstan-type _T_TRABData_Devices_Variant array{
+ *     Id: int,
+ *     ItemIds_Last: int,
+ *     SystemItemIds_Last: int,
+ *     Hash: string,
+ *     Expires: int|null,
+ *     LastSync: int|null,
+ *     DBSync: int|null,
+ *     ...<string,mixed>}
  */
 class _TDevices extends TTable {
     /**
@@ -27,6 +54,24 @@ class _TDevices extends TTable {
      * @return _T_TRABData_Devices
      */
     static public function AssertRow(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_Devices_Insert $row
+     * @return _T_TRABData_Devices_Insert
+     */
+    static public function AssertRow_Insert(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_Devices_Update $row
+     * @return _T_TRABData_Devices_Update
+     */
+    static public function AssertRow_Update(array $row): array {
         return $row;
     }
 

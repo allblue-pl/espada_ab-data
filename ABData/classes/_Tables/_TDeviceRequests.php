@@ -14,6 +14,18 @@ use Override;
  *     DeviceId: int,
  *     RequestId: int,
  * }
+ * @phpstan-type _T_TRABData_DeviceRequests_Insert array{
+ *     DeviceId: int,
+ *     RequestId: int,
+ * }
+ * @phpstan-type _T_TRABData_DeviceRequests_Update array{
+ *     DeviceId?: int,
+ *     RequestId?: int,
+ * }
+ * @phpstan-type _T_TRABData_DeviceRequests_Variant array{
+ *     DeviceId: int,
+ *     RequestId: int,
+ *     ...<string,mixed>}
  */
 class _TDeviceRequests extends TTable {
     /**
@@ -22,6 +34,24 @@ class _TDeviceRequests extends TTable {
      * @return _T_TRABData_DeviceRequests
      */
     static public function AssertRow(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_DeviceRequests_Insert $row
+     * @return _T_TRABData_DeviceRequests_Insert
+     */
+    static public function AssertRow_Insert(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_DeviceRequests_Update $row
+     * @return _T_TRABData_DeviceRequests_Update
+     */
+    static public function AssertRow_Update(array $row): array {
         return $row;
     }
 

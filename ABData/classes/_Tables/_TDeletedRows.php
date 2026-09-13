@@ -15,6 +15,21 @@ use Override;
  *     RowId: float,
  *     _Modified_DateTime: float,
  * }
+ * @phpstan-type _T_TRABData_DeletedRows_Insert array{
+ *     TableId: int,
+ *     RowId: float,
+ *     _Modified_DateTime: float,
+ * }
+ * @phpstan-type _T_TRABData_DeletedRows_Update array{
+ *     TableId?: int,
+ *     RowId?: float,
+ *     _Modified_DateTime?: float,
+ * }
+ * @phpstan-type _T_TRABData_DeletedRows_Variant array{
+ *     TableId: int,
+ *     RowId: float,
+ *     _Modified_DateTime: float,
+ *     ...<string,mixed>}
  */
 class _TDeletedRows extends TTable {
     /**
@@ -23,6 +38,24 @@ class _TDeletedRows extends TTable {
      * @return _T_TRABData_DeletedRows
      */
     static public function AssertRow(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_DeletedRows_Insert $row
+     * @return _T_TRABData_DeletedRows_Insert
+     */
+    static public function AssertRow_Insert(array $row): array {
+        return $row;
+    }
+
+    /**
+     *
+     * @param _T_TRABData_DeletedRows_Update $row
+     * @return _T_TRABData_DeletedRows_Update
+     */
+    static public function AssertRow_Update(array $row): array {
         return $row;
     }
 
