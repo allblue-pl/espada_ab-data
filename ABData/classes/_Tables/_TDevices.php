@@ -103,6 +103,17 @@ class _TDevices extends TTable {
     //     return $rows;
     // }
 
+    /**
+     *
+     * @param _T_TRABData_Devices_Variant $row
+     * @return _T_TRABData_Devices
+     */
+    static public function RawRow(MDatabase $db, array $row): array {
+        $table = new _TDevices($db);
+
+        return $table->stripRow($row);
+    }
+
 
     public function __construct(MDatabase $db, $tablePrefix = 'abd_d') {
         parent::__construct($db, 'ABData_Devices', $tablePrefix);

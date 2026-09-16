@@ -87,6 +87,17 @@ class _TDeletedRows extends TTable {
     //     return $rows;
     // }
 
+    /**
+     *
+     * @param _T_TRABData_DeletedRows_Variant $row
+     * @return _T_TRABData_DeletedRows
+     */
+    static public function RawRow(MDatabase $db, array $row): array {
+        $table = new _TDeletedRows($db);
+
+        return $table->stripRow($row);
+    }
+
 
     public function __construct(MDatabase $db, $tablePrefix = 'abd_dlr') {
         parent::__construct($db, 'ABData_DeletedRows', $tablePrefix);

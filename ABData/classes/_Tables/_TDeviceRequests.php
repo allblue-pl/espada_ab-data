@@ -83,6 +83,17 @@ class _TDeviceRequests extends TTable {
     //     return $rows;
     // }
 
+    /**
+     *
+     * @param _T_TRABData_DeviceRequests_Variant $row
+     * @return _T_TRABData_DeviceRequests
+     */
+    static public function RawRow(MDatabase $db, array $row): array {
+        $table = new _TDeviceRequests($db);
+
+        return $table->stripRow($row);
+    }
+
 
     public function __construct(MDatabase $db, $tablePrefix = 'abd_drq') {
         parent::__construct($db, 'ABData_DeviceRequests', $tablePrefix);
