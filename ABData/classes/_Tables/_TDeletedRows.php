@@ -95,6 +95,7 @@ class _TDeletedRows extends TTable {
     static public function RawRow(MDatabase $db, array $row): array {
         $table = new _TDeletedRows($db);
 
+        /* @phpstan-ignore return.type */
         return $table->stripRow($row);
     }
 

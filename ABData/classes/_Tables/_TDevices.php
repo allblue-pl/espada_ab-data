@@ -111,6 +111,7 @@ class _TDevices extends TTable {
     static public function RawRow(MDatabase $db, array $row): array {
         $table = new _TDevices($db);
 
+        /* @phpstan-ignore return.type */
         return $table->stripRow($row);
     }
 

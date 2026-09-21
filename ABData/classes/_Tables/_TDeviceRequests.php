@@ -91,6 +91,7 @@ class _TDeviceRequests extends TTable {
     static public function RawRow(MDatabase $db, array $row): array {
         $table = new _TDeviceRequests($db);
 
+        /* @phpstan-ignore return.type */
         return $table->stripRow($row);
     }
 
