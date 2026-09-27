@@ -78,6 +78,10 @@ class CDataStore {
     //     }
     // }
 
+    public function checkPermission(string $requestName, string $actionName): bool {
+        return true;
+    }
+
     public function dbSync_GetUpdateData(CDevice $device, ?int $schemeVersion, 
             ?float $lastSync, ?array &$dataInfos, bool $assocUpdateData, 
             ?string &$error) {
@@ -515,6 +519,17 @@ class CDataStore {
         foreach ($requests as $request) {
             list($requestId, list($requestName, $actionName, $actionArgs, 
                     $schemeVersion)) = $request;
+
+            if (!$this->checkPermission($requestName, $actionName)) {
+                $success = false;
+
+                $response['requestIds'][] = $requestId;
+                $response['type'] = self::Response_Types_ActionError;
+                $response['errorMessage'] = "Action Error: '{$requestName}:{$actionName}'";
+                $response['actionErrors'][$requestId] = "Permission denied";
+
+                continue;
+            }
 
             $parseArgsErrors = [];
             $actionArgs = $this->parseArgs($response, $actionArgs, $parseArgsErrors);

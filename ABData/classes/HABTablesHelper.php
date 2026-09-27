@@ -41,6 +41,8 @@ class HABTablesHelper {
             return new EC\Forms\VBool($args);
         else if ($type === 'Date')
             return new EC\Forms\VDate($args);
+        else if ($type === 'Enum')
+            return new EC\Forms\VEnum($args);
         else if ($type === 'Email')
             return new EC\Forms\VEmail($args);
         else if ($type === 'File')

@@ -12,8 +12,8 @@ class RRequest {
     private CDataStore $dataStore;
     /**
      * @var list<array{
-           fn: ActionFn,
-           type: "r"|"w",
+     *     fn: ActionFn,
+     *     type: "r"|"w",
      * }>
      */
     private array $actions;
