@@ -13,22 +13,22 @@ use Override;
  * @phpstan-type _T_TRABData_DeviceRows array{
  *     DeviceId: int,
  *     TableId: int,
- *     RowId: float,
+ *     RowId: int,
  * }
  * @phpstan-type _T_TRABData_DeviceRows_Insert array{
  *     DeviceId: int,
  *     TableId: int,
- *     RowId: float,
+ *     RowId: int,
  * }
  * @phpstan-type _T_TRABData_DeviceRows_Update array{
  *     DeviceId?: int,
  *     TableId?: int,
- *     RowId?: float,
+ *     RowId?: int,
  * }
  * @phpstan-type _T_TRABData_DeviceRows_Variant array{
  *     DeviceId: int,
  *     TableId: int,
- *     RowId: float,
+ *     RowId: int,
  *     ...<string,mixed>}
  */
 class _TDeviceRows extends TTable {

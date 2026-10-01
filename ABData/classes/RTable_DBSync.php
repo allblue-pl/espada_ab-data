@@ -64,9 +64,9 @@ class RTable_DBSync extends RDBSyncRequest {
 
         if ($args['limit'] !== null) {
             $offset = $args['limit'][0] === null ? 
-                    0 : floor((float)$args['limit'][0]);
+                    0 : floor((int)$args['limit'][0]);
             $limit = $args['limit'][1] === null ? 
-                    '2147483647' : floor((float)$args['limit'][1]);
+                    '2147483647' : floor((int)$args['limit'][1]);
 
             $queryExtension .= " LIMIT {$offset}, {$limit}";
         }

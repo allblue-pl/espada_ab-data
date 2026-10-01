@@ -5,7 +5,7 @@ use Closure;
 use E, EC;
 
 /**
- * @phpstan-type ActionFn \Closure(?CDevice $device, array $args, ?int $schemeVersion, ?float $lastUpdate): array
+ * @phpstan-type ActionFn \Closure(?CDevice $device, array $args, ?int $schemeVersion, ?int $lastUpdate): array
  */
 
 class RRequest {
@@ -24,7 +24,7 @@ class RRequest {
     }
 
     public function executeAction(?CDevice $device, string $actionName, 
-            array $actionArgs, ?int $schemeVersion, ?float $lastUpdate) {
+            array $actionArgs, ?int $schemeVersion, ?int $lastUpdate) {
         if (!array_key_exists($actionName, $this->actions))
             throw new \Exception("Action '{$actionName}' does not exists.");
 

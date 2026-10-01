@@ -173,9 +173,9 @@ class CDevice {
         $deviceId = (int)floor($id / self::$Devices_Offset);
 
         return [
-            'id' => (float)$id,
-            'deviceId' => (float)$deviceId,
-            'itemId' => (float)($id - $deviceId * self::$Devices_Offset),
+            'id' => (int)$id,
+            'deviceId' => (int)$deviceId,
+            'itemId' => (int)($id - $deviceId * self::$Devices_Offset),
         ];
     }
 
@@ -377,7 +377,7 @@ class CDevice {
         return $this->rowUpdates;
     }
 
-    public function isNewId(float $id): bool {
+    public function isNewId(int $id): bool {
         $id = $id + 0;
         $idInfo = self::GetIdInfo($id);
 
@@ -468,7 +468,7 @@ class CDevice {
         $this->createTime = $db->query_Select(
                 'SELECT CAST(UNIX_TIMESTAMP(CURTIME(3)) * 1000 AS UNSIGNED) AS CreateTime')[ 0]['CreateTime'];
 
-        $this->id = (float)($deviceId + 0);
+        $this->id = (int)($deviceId + 0);
         $this->lastUpdate = $lastUpdate;
         $this->expires = $expires;
         $this->lastSync = $lastSync;
@@ -477,8 +477,8 @@ class CDevice {
         $this->itemIds_Declared = $declaredItemIds;
         $this->itemIds_Used = $usedItemIds;
 
-        $this->systemDevice_Id = (float)($deviceId + 1);
-        $this->systemDevice_ItemIds_Last = (float)$lastSystemItemId;
+        $this->systemDevice_Id = (int)($deviceId + 1);
+        $this->systemDevice_ItemIds_Last = (int)$lastSystemItemId;
         $this->systemDevice_ItemIds_Declared = [];
         $this->systemDevice_ItemIds_Used = [];
 

@@ -83,7 +83,7 @@ class CDataStore {
     }
 
     public function dbSync_GetUpdateData(CDevice $device, ?int $schemeVersion, 
-            ?float $lastSync, ?array &$dataInfos, bool $assocUpdateData, 
+            ?int $lastSync, ?array &$dataInfos, bool $assocUpdateData, 
             ?string &$error) {
         $updateData = [
             'update' => [],
@@ -654,7 +654,7 @@ class CDataStore {
     private function getUpdateData(CDevice $device, int $schemeVersion, 
             array &$rDeviceRows_New, array &$updateData_Delete, 
             string $dbSyncRequestName, string $tableName, RDBSyncRequest $tableRequest, 
-            ?float $lastUpdate, int $rowsOffset, ?int $rowsLimit, bool $onlyIds, 
+            ?int $lastUpdate, int $rowsOffset, ?int $rowsLimit, bool $onlyIds, 
             ?string &$error) : ?array {
         // $deviceRowIds = [];
         $where = [];

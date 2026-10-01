@@ -12,23 +12,23 @@ use Override;
  *
  * @phpstan-type _T_TRABData_DeletedRows array{
  *     TableId: int,
- *     RowId: float,
- *     _Modified_DateTime: float,
+ *     RowId: int,
+ *     _Modified_DateTime: int,
  * }
  * @phpstan-type _T_TRABData_DeletedRows_Insert array{
  *     TableId: int,
- *     RowId: float,
- *     _Modified_DateTime: float,
+ *     RowId: int,
+ *     _Modified_DateTime: int,
  * }
  * @phpstan-type _T_TRABData_DeletedRows_Update array{
  *     TableId?: int,
- *     RowId?: float,
- *     _Modified_DateTime?: float,
+ *     RowId?: int,
+ *     _Modified_DateTime?: int,
  * }
  * @phpstan-type _T_TRABData_DeletedRows_Variant array{
  *     TableId: int,
- *     RowId: float,
- *     _Modified_DateTime: float,
+ *     RowId: int,
+ *     _Modified_DateTime: int,
  *     ...<string,mixed>}
  */
 class _TDeletedRows extends TTable {

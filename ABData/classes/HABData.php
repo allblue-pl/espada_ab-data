@@ -26,7 +26,7 @@ class HABData {
     }
 
     static public function ClearDeviceRows_ByLastSync(EC\Database\MDatabase $db,
-            float $beforeTime) {
+            int $beforeTime) {
         $localTransaction = false;
         if ($db->transaction_IsAutocommit()) {
             $db->transaction_Start();
